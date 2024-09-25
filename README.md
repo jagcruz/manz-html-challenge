@@ -1,7 +1,5 @@
 # ManzDev's HTML 30-day challenge
 
-> https://lenguajehtml.com/challenge/
-
 HTML challenges devised by [ManzDev](https://manz.dev) to improve and practice HTML skills. The idea is to do a daily challenge to improve in HTML for 30 days. Although the challenges are focused on performing certain tasks with HTML, CSS or JavaScript, for my solutions I will only focus on performing a little beyond what is asked, to practice my skills and knowledge. If you are interested in performing these challenges, you can find them at the following [link](https://lenguajehtml.com/challenge). Below are the challenges done so far, I hope you like them!
 
 - [Day 1](https://jagcruz.github.io/manz-html-challenge/day-01)
