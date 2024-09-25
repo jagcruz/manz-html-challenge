@@ -1,0 +1,273 @@
+/* jetbrains-mono-latin-wght-normal */
+@font-face {
+  font-family: "JetBrains Mono Variable";
+  font-style: normal;
+  font-display: swap;
+  font-weight: 100 800;
+  src: url(https://cdn.jsdelivr.net/fontsource/fonts/jetbrains-mono:vf@latest/latin-wght-normal.woff2)
+    format("woff2-variations");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
+    U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191,
+    U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+/* bebas-neue-latin-400-normal */
+@font-face {
+  font-family: "Bebas Neue";
+  font-style: normal;
+  font-display: swap;
+  font-weight: 400;
+  src: url(https://cdn.jsdelivr.net/fontsource/fonts/bebas-neue@latest/latin-400-normal.woff2)
+      format("woff2"),
+    url(https://cdn.jsdelivr.net/fontsource/fonts/bebas-neue@latest/latin-400-normal.woff)
+      format("woff");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
+    U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191,
+    U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+/* kode-mono-latin-wght-normal */
+@font-face {
+  font-family: "Kode Mono Variable";
+  font-style: normal;
+  font-display: swap;
+  font-weight: 400 700;
+  src: url(https://cdn.jsdelivr.net/fontsource/fonts/kode-mono:vf@latest/latin-wght-normal.woff2)
+    format("woff2-variations");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
+    U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191,
+    U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+:root {
+  --text-color: #e5e9f0;
+  --body-color: #04011c;
+  --primary-color: #26d0ce;
+  --secondary-color: #d22222;
+  --accent-color: #c98bdf;
+  --extra-color: #e6089b;
+
+  --scrollbar-size: 0.4rem;
+
+  color-scheme: dark;
+}
+
+* {
+  border: 0;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:is(h1, h2, h3, h4, h5, h6) {
+  text-wrap: balance;
+}
+
+p {
+  text-wrap: pretty;
+}
+
+body {
+  --grid-bg-size: 3rem;
+
+  display: grid;
+  min-height: 100vh;
+  position: relative;
+  place-items: center;
+  color: var(--text-color);
+  background-color: var(--body-color);
+  font-family: "JetBrains Mono Variable", monospace;
+
+  &::-webkit-scrollbar {
+    width: var(--scrollbar-size);
+    height: var(--scrollbar-size);
+  }
+
+  &::-webkit-scrollbar-track {
+    background: var(--body-color);
+    border-radius: 0.2rem;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: var(--primary-color);
+    border-radius: 0.2rem;
+  }
+}
+
+.header {
+  display: flex;
+  gap: 1rem;
+  flex-direction: column;
+
+  padding-block: 1.5rem;
+  position: sticky;
+  inset-inline: 0;
+  inset-block-start: -1px;
+
+  width: 100%;
+  backdrop-filter: blur(21px);
+  background-color: rgb(from var(--body-color) r g b / 0.5);
+
+  @media (width < 768px) {
+    padding-inline: 1rem;
+  }
+
+  & .logo {
+    gap: 0.45rem;
+    display: flex;
+    font-size: 3rem;
+    font-weight: 400;
+    align-items: center;
+    justify-content: center;
+    font-family: "Bebas Neue", sans-serif;
+
+    @media (width < 768px) {
+      font-size: 2.7rem;
+    }
+
+    & svg {
+      animation: highlight 1.5s infinite alternate;
+
+      @media (width < 768px) {
+        width: 3.6rem;
+      }
+    }
+  }
+
+  h1 {
+    font-weight: 600;
+    font-size: 4.2rem;
+    text-align: center;
+
+    @media (width < 768px) {
+      font-size: 3.2rem;
+    }
+
+    span {
+      color: var(--primary-color);
+    }
+  }
+}
+
+main {
+  height: 100%;
+  width: 100%;
+  background-image: repeating-linear-gradient(
+      to right,
+      transparent 0 var(--grid-bg-size),
+      rgb(from var(--secondary-color) r g b / 0.1) var(--grid-bg-size)
+        calc(var(--grid-bg-size) + 1px)
+    ),
+    repeating-linear-gradient(
+      to bottom,
+      transparent 0 var(--grid-bg-size),
+      rgb(from var(--secondary-color) r g b / 0.1) var(--grid-bg-size)
+        calc(var(--grid-bg-size) + 1px)
+    );
+
+  & .content {
+    max-width: 50vw;
+    margin-block: 1.5rem;
+    margin-inline: auto;
+
+    @media (width < 768px) {
+      max-width: 81vw;
+    }
+
+    & :is(h1, h2) {
+      font-weight: 600;
+      text-align: center;
+      line-height: 1.6;
+    }
+
+    & h1 {
+      font-size: 3.2rem;
+
+      @media (width < 768px) {
+        font-size: 2.4rem;
+      }
+    }
+
+    & h2 {
+      width: 100%;
+      font-size: 2.4rem;
+      position: relative;
+      margin-block: 2rem;
+
+      @media (width < 768px) {
+        font-size: 1.8rem;
+      }
+
+      &::before,
+      &::after {
+        content: "";
+        width: 15%;
+        height: 0.3rem;
+        position: absolute;
+        inset-block-start: 50%;
+        transform: translateY(-50%);
+      }
+
+      &::before {
+        inset-inline-start: 0;
+        background-image: linear-gradient(
+          to right,
+          transparent,
+          var(--primary-color)
+        );
+      }
+
+      &::after {
+        inset-inline-end: 0;
+        background-image: linear-gradient(
+          to left,
+          transparent,
+          var(--primary-color)
+        );
+      }
+    }
+
+    & p {
+      font-size: 1.2rem;
+      line-height: 1.2;
+      margin-block: 0.5rem;
+
+      @media (width < 768px) {
+        font-size: 1.4rem;
+      }
+    }
+
+    & ul {
+      padding-inline: 1rem;
+      padding-block-start: 0.5rem;
+
+      & li {
+        font-size: 1.2rem;
+        line-height: 1.5;
+        margin-block: 0.5rem;
+        margin-inline: 1rem;
+
+        &::marker {
+          color: var(--primary-color);
+          font-size: 1.2rem;
+        }
+
+        & code {
+          padding: 0.1rem 0.3rem;
+          border-radius: 0.5rem;
+          background-color: rgb(from var(--secondary-color) r g b / 0.2);
+          font-family: "Kode Mono Variable", monospace;
+        }
+      }
+    }
+  }
+}
+
+@keyframes highlight {
+  0% {
+    fill: var(--primary-color);
+  }
+  100% {
+    fill: var(--accent-color);
+  }
+}
