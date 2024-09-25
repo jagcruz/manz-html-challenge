@@ -1,0 +1,18 @@
+hr {
+  border: 0;
+  height: 0.3rem;
+  margin: 1.5rem;
+
+  background-image: linear-gradient(
+    to right,
+    transparent,
+    var(--primary-color),
+    transparent
+  );
+}
+
+img.emoji {
+  display: block;
+  margin-block: 2.7rem 3rem;
+  margin-inline: auto;
+}

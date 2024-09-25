@@ -97,6 +97,7 @@ body {
   display: flex;
   gap: 1rem;
   flex-direction: column;
+  z-index: 1100;
 
   padding-block: 1.5rem;
   position: sticky;
@@ -191,7 +192,7 @@ main {
       width: 100%;
       font-size: 2.4rem;
       position: relative;
-      margin-block: 2rem;
+      margin-block: 2rem 1.5rem;
 
       @media (width < 768px) {
         font-size: 1.8rem;
@@ -228,8 +229,8 @@ main {
 
     & p {
       font-size: 1.2rem;
-      line-height: 1.2;
-      margin-block: 0.5rem;
+      line-height: 1.5;
+      margin-block: 0.9rem;
 
       @media (width < 768px) {
         font-size: 1.4rem;
@@ -250,16 +251,16 @@ main {
           color: var(--primary-color);
           font-size: 1.2rem;
         }
-
-        & code {
-          padding: 0.1rem 0.3rem;
-          border-radius: 0.5rem;
-          background-color: rgb(from var(--secondary-color) r g b / 0.2);
-          font-family: "Kode Mono Variable", monospace;
-        }
       }
     }
   }
+}
+
+code {
+  padding: 0.1rem 0.3rem;
+  border-radius: 0.5rem;
+  background-color: rgb(from var(--secondary-color) r g b / 0.2);
+  font-family: "Kode Mono Variable", monospace;
 }
 
 @keyframes highlight {
