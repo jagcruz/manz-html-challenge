@@ -75,10 +75,18 @@
 
   & ol {
     width: 90%;
-    
+
     & li {
       &.done {
         text-decoration: line-through;
+        position: relative;
+
+        &::after {
+          content: "Done!";
+          font-size: 0.6rem;
+          text-decoration: none;
+          position: absolute;
+        }
       }
     }
   }
