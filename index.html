@@ -69,10 +69,15 @@
 
                 &::after {
                   animation: happy 1.3s ease infinite alternate;
+                  filter: drop-shadow(0 0 0.3rem #ffb02e);
                 }
               }
               &[data-status="😭"] {
                 --text-color: #ff7b7b;
+
+                &::after {
+                  filter: drop-shadow(0 0 0.3rem var(--text-color));
+                }
               }
 
               &:hover {
