@@ -267,6 +267,44 @@ code {
   font-family: "Kode Mono Variable", monospace;
 }
 
+a {
+  text-decoration: none;
+  color: var(--primary-color);
+  transition: color 0.3s ease-in-out, filter 0.3s ease-in-out;
+
+  &:hover {
+    color: var(--accent-color);
+    filter: drop-shadow(0 0 0.1rem var(--accent-color));
+  }
+}
+
+.footer {
+  width: 100%;
+  height: 6rem;
+  display: grid;
+  place-items: center;
+  box-shadow: 0 -0.1rem 0.2rem rgb(from var(--accent-color) r g b / 0.1);
+
+  nav {
+    font-size: 1.2rem;
+    font-weight: 400;
+
+    ul {
+      gap: 1rem;
+      display: flex;
+      list-style: none;
+      align-items: center;
+      justify-content: center;
+
+      li:nth-child(2) {
+        font-weight: 600;
+        font-size: 2.1rem;
+        color: var(--accent-color);
+      }
+    }
+  }
+}
+
 @keyframes highlight {
   0% {
     fill: var(--primary-color);
