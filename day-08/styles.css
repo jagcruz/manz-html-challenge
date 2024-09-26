@@ -1,0 +1,56 @@
+em {
+  color: var(--primary-color);
+}
+
+strong {
+  font-weight: bolder;
+}
+
+u {
+  color: var(--primary-color);
+  text-decoration-style: wavy;
+  text-decoration-color: var(--accent-color);
+}
+
+s {
+  color: var(--primary-color);
+  text-decoration-thickness: 0.25rem;
+  text-decoration-color: var(--secondary-color);
+}
+
+span.custom-styles {
+  font-weight: bold;
+  font-size: 1.5rem;
+  color: var(--accent-color);
+  font-variant-caps: small-caps;
+
+  &.hoverable {
+    cursor: pointer;
+    position: relative;
+    transition: color 0.3s ease-in-out;
+
+    &:hover {
+      color: var(--secondary-color);
+
+      &::after {
+        scale: 1;
+      }
+    }
+    
+    &::after {
+      content: "";
+      pointer-events: none;
+      position: absolute;
+      inset-inline-start: -3rem;
+      inset-block-start: -12rem;
+      
+      width: 12rem;
+      height: 12rem;
+      background-image: url(../assets/exploding-head.png);
+      background-size: cover;
+      
+      scale: 0;
+      transition: scale 0.3s ease-in-out;
+    }
+  }
+}
