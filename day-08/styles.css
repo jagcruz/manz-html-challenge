@@ -1,3 +1,7 @@
+@view-transition {
+  navigation: auto;
+}
+
 em {
   color: var(--primary-color);
 }
