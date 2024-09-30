@@ -5,9 +5,39 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>HTML Challenge: Day 2</title>
 
-    <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg" />
+    <link
+      rel="preload"
+      href="https://cdn.jsdelivr.net/fontsource/fonts/jetbrains-mono:vf@latest/latin-wght-normal.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href="https://cdn.jsdelivr.net/fontsource/fonts/bebas-neue@latest/latin-400-normal.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href="https://cdn.jsdelivr.net/fontsource/fonts/bebas-neue@latest/latin-400-normal.woff"
+      as="font"
+      type="font/woff"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href="https://cdn.jsdelivr.net/fontsource/fonts/kode-mono:vf@latest/latin-wght-normal.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+
     <link rel="stylesheet" href="../day-01/styles.css" />
     <link rel="stylesheet" href="./styles.css" />
+
+    <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg" />
   </head>
   <body>
     <header class="header">
@@ -57,20 +87,20 @@
         <h2>The paragraph tag</h2>
 
         <p>
-          The <code>&lt;p&gt;</code> tag is used to define a paragraph in the HTML
-          document. The <code>&lt;p&gt;</code> tag is a block-level element and it
-          is used to group a section of text in the HTML document.
+          The <code>&lt;p&gt;</code> tag is used to define a paragraph in the
+          HTML document. The <code>&lt;p&gt;</code> tag is a block-level element
+          and it is used to group a section of text in the HTML document.
         </p>
 
         <h2>The image tag</h2>
 
         <p>
-          The <code>&lt;img&gt;</code> tag is used to define an image in the HTML
-          document. The <code>&lt;img&gt;</code> tag is an inline element and it is
-          used to display an image on the web page. The <code>&lt;img&gt;</code> tag
-          has two required attributes: <code>src</code> and <code>alt</code>.
-          The <code>src</code> attribute is used to specify the URL of the image
-          and the <code>alt</code>
+          The <code>&lt;img&gt;</code> tag is used to define an image in the
+          HTML document. The <code>&lt;img&gt;</code> tag is an inline element
+          and it is used to display an image on the web page. The
+          <code>&lt;img&gt;</code> tag has two required attributes:
+          <code>src</code> and <code>alt</code>. The <code>src</code> attribute
+          is used to specify the URL of the image and the <code>alt</code>
           attribute is used to specify an alternate text for the image. The
           alternate text is displayed if the image is not available or if the
           user is using a screen reader.
@@ -82,14 +112,15 @@
           image, and <code>title</code> to specify a title for the image. The
           <code>title</code> attribute is displayed as a tooltip when the user
           hovers over the image. An interesting attribute of the
-          <code>&lt;img&gt;</code> tag is the <code>loading</code> attribute that
-          can be used to specify how the image should be loaded. The possible
-          values for the <code>loading</code> attribute are <code>auto</code>,
-          <code>lazy</code> and <code>eager</code>. The <code>auto</code> value
-          is the default value and the browser decides how the image should be
-          loaded. The <code>lazy</code> value is used to load the image only
-          when it is in the viewport. The <code>eager</code> value is used to
-          load the image as soon as possible.
+          <code>&lt;img&gt;</code> tag is the <code>loading</code> attribute
+          that can be used to specify how the image should be loaded. The
+          possible values for the <code>loading</code> attribute are
+          <code>auto</code>, <code>lazy</code> and <code>eager</code>. The
+          <code>auto</code> value is the default value and the browser decides
+          how the image should be loaded. The <code>lazy</code> value is used to
+          load the image only when it is in the viewport. The
+          <code>eager</code> value is used to load the image as soon as
+          possible.
         </p>
 
         <hr />
