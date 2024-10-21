@@ -1,0 +1,203 @@
+.tv-section {
+  --tv-color: #010c15;
+  --noise-opacity: 0.6;
+  --noise-index: -1;
+
+  max-width: 50vw;
+  min-height: 50vh;
+  position: relative;
+  margin-inline: auto;
+  padding-block: 3rem 6rem;
+
+  & .tv-wrapper {
+    width: 100%;
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    filter: drop-shadow(0 0 3rem rgb(from var(--text-color) r g b / 0.5));
+
+    &::before {
+      content: "";
+      position: absolute;
+      inset-block: 60% -9%;
+      border-radius: 0.25rem;
+
+      width: 30%;
+      background-color: var(--tv-color);
+    }
+
+    & .tv {
+      z-index: 1;
+      width: 60%;
+      aspect-ratio: 16 / 9;
+
+      overflow: hidden;
+      position: relative;
+      border-radius: 0.5rem;
+      border: 1rem solid var(--tv-color);
+      background-color: var(--body-color);
+
+      &::before {
+        content: "";
+
+        inset: -150%;
+        position: absolute;
+        z-index: var(--noise-index);
+        opacity: var(--noise-opacity);
+
+        background-size: contain;
+        background-image: url(../assets/noise.webp);
+        animation: noise 1s steps(8, end) infinite both;
+
+        will-change: opacity;
+        transition: opacity 0.3s ease;
+      }
+
+      &::after {
+        content: attr(data-channel);
+
+        position: absolute;
+        inset-block-end: 0;
+        inset-inline-start: 0;
+
+        z-index: 1;
+        padding: 0.3rem 0.5rem;
+        background-color: rgb(0 0 0 / 0.5);
+
+        color: #31f500;
+        font-weight: 700;
+        font-size: 1rem;
+        font-family: "Kode Mono Variable", monospace;
+      }
+
+      & iframe {
+        width: 100%;
+        height: 100%;
+      }
+    }
+
+    & .brand {
+      z-index: 2;
+      font-size: 0.5rem;
+      position: absolute;
+      color: var(--text-color);
+      inset-block-end: -0.25rem;
+    }
+  }
+
+  & .remote {
+    width: 14rem;
+    height: 18rem;
+    padding-inline: 0.5rem;
+    padding-block: 2rem 0.5rem;
+    border-start-start-radius: 1rem;
+    border-start-end-radius: 1rem;
+    background-color: color-mix(in srgb, var(--tv-color), #ffffff 10%);
+    box-shadow: -0.3rem -0.3rem 0 color-mix(in srgb, var(--tv-color), #ffffff
+            30%),
+      -0.3rem 0 0 color-mix(in srgb, var(--tv-color), #ffffff 30%);
+
+    gap: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+
+    position: absolute;
+    inset-block-end: 0;
+    inset-inline-end: -6rem;
+
+    & .brand {
+      font-size: 0.75rem;
+      color: var(--text-color);
+
+      position: absolute;
+      inset-block-start: 0.5rem;
+    }
+
+    & button[data-channel] {
+      width: 4rem;
+      aspect-ratio: 1 / 1;
+      border-radius: 2rem;
+      background-color: var(--tv-color);
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      cursor: pointer;
+      box-shadow: -0.3rem -0.3rem 0 color-mix(in srgb, var(--tv-color), #ffffff
+            30%);
+
+      transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+
+      &:active {
+        transform: translateY(-0.3rem) translateX(-0.3rem);
+        box-shadow: none;
+      }
+
+      & img {
+        pointer-events: none;
+      }
+    }
+  }
+
+  @media (width < 768px) {
+    max-width: 81vw;
+
+    & .tv-wrapper {
+      &::before {
+        width: 40%;
+      }
+
+      & .tv {
+        width: 100%;
+      }
+    }
+
+    & .remote {
+      inset-inline-end: 0;
+      inset-inline-end: 50%;
+      transform: translateX(50%);
+    }
+  }
+}
+
+@keyframes noise {
+  0% {
+    transform: translateX(0px, 0px);
+  }
+  10% {
+    transform: translate(-100px, 100px);
+  }
+  20% {
+    transform: translate(150px, -100px);
+  }
+  30% {
+    transform: translate(-100px, 100px);
+  }
+  40% {
+    transform: translate(100px, -150px);
+  }
+  50% {
+    transform: translate(-100px, 200px);
+  }
+  60% {
+    transform: translate(-200px, -100px);
+  }
+  70% {
+    transform: translateY(50px, 100px);
+  }
+  80% {
+    transform: translate(100px, -150px);
+  }
+  90% {
+    transform: translate(0px, 200px);
+  }
+  100% {
+    transform: translate(-100px, 100px);
+  }
+}
