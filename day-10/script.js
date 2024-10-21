@@ -1,7 +1,7 @@
 const channels = [
   [
     "Manz Dev",
-    "https://www.youtube.com/embed/videoseries?list=PLx5xbrpW6nXi94T6_zJWUt8R-nGKQJm2I&start=6&controls=0&enablejsapi",
+    "https://www.youtube.com/embed/d2FCyAkPaLY?si=cYN68sQAgSi-zt1R&controls=0&enablejsapi",
   ],
   [
     "Odracir Dev",
@@ -17,6 +17,7 @@ const channels = [
   ],
   [
     "Midu Dev",
+    "https://www.youtube.com/embed/5rUa0wGzgdA?si=DTU7hWZ6Mj3y-sdO&amp;controls=0&enablejsapi",
     "https://www.youtube.com/embed/videoseries?list=PLUofhDIg_38oxKT-EDmtEpVhNSQkXn3tb&controls=0&enablejsapi",
   ],
 ];
