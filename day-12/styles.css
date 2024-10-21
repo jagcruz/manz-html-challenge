@@ -1,0 +1,45 @@
+.result {
+  gap: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+  & .output {
+    font-size: 3rem;
+    font-weight: 900;
+
+    & .number {
+      color: var(--primary-color);
+    }
+  }
+
+  & input[type="range"] {
+    width: 30%;
+    padding: 0.5rem 0;
+    appearance: none;
+    background: none;
+
+    &::-webkit-slider-runnable-track {
+      background: none;
+    }
+
+    &::-webkit-slider-container {
+      height: 0.5rem;
+      cursor: pointer;
+      border-radius: 0.5rem;
+      background-color: var(--primary-color);
+      box-shadow: 0 0 0.5rem var(--primary-color);
+    }
+
+    &::-webkit-slider-thumb {
+      width: 1rem;
+      height: 2rem;
+      cursor: grab;
+      appearance: none;
+      border-radius: 1rem;
+      background-color: var(--secondary-color);
+      box-shadow: 0 0 0.5rem var(--primary-color);
+    }
+  }
+}

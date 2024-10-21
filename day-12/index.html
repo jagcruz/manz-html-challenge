@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>HTML Challenge: Day 11</title>
+    <title>HTML Challenge: Day 12</title>
 
     <link rel="preconnect" href="https://cdn.jsdelivr.net" />
     <link
@@ -35,14 +35,14 @@
       crossorigin="anonymous"
     />
 
-    <link rel="stylesheet" href="../day-01/styles.css" />
     <link rel="stylesheet" href="./styles.css" />
+    <link rel="stylesheet" href="../day-01/styles.css" />
 
     <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg" />
 
     <meta
       name="description"
-      content="Solution for the ManzDev's HTML Challenge: Day 11"
+      content="Solution for the ManzDev's HTML Challenge: Day 12"
     />
   </head>
   <body>
@@ -63,7 +63,7 @@
         <span>Gutiérrez</span>
       </div>
 
-      <h1>HTML Challenge: <span>Day 11</span></h1>
+      <h1>HTML Challenge: <span>Day 12</span></h1>
     </header>
 
     <main>
@@ -71,20 +71,29 @@
         <h1>Challenge</h1>
 
         <p>
-          Create a text with super/subscripts (chemical formulas, for example).
-          How can we make this? Easy! Just we need to use the
-          <code>&lt;sup&gt;</code> and <code>&lt;sub&gt;</code> tags.
+          At this challenge we need to create a slider that allows us to select
+          a number between <code>1-50</code> and display it live as we change
+          it. For this it is necessary to use some Javascript. For the solution,
+          the slider should be displayed in the middle of the screen and the
+          number should be displayed below it. HTML has a
+          <code>&lt;input type="range"&gt;</code> element that can be used to
+          create a slider. The value of the slider can be obtained using the
+          <code>value</code> property of the element using Javascript. Let's
+          start!
         </p>
 
         <h2>Result</h2>
 
-        <article>
-          <p class="formula">
-            <span>E = mc<sup>2</sup></span>
-          </p>
+        <form class="result">
+          <div class="output">Number: <output class="number">25</output></div>
 
-          <p class="formula"><span>H<sub>2</sub>O</span></p>
-        </article>
+          <input
+            type="range"
+            min="1"
+            max="50"
+            value="25"
+          />
+        </form>
       </section>
     </main>
 
@@ -92,7 +101,7 @@
       <nav>
         <ul>
           <li>
-            <a href="../day-10" title="Previous Day">← Day 10</a>
+            <a href="../day-11" title="Previous Day">← Day 11</a>
           </li>
 
           <li>
@@ -109,10 +118,12 @@
           </li>
 
           <li>
-            <a href="../day-12" title="Next Day">Day 12 →</a>
+            <a href="../day-13" title="Next Day">Day 13 →</a>
           </li>
         </ul>
       </nav>
     </footer>
+
+    <script src="./script.js"></script>
   </body>
 </html>
